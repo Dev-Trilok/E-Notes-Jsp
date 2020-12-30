@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 28 Dec, 2020, 9:51:33 PM
-    Author     : LaluPaluMona
+    Author     : Triloknath Nalawade
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -10,17 +10,23 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0  shrink-to-fit=no" />
         <title>E-Notes </title>
-        <link rel="stylesheet" href="bootstrap\dist\css\bootstrap.min.css" />
-        <link rel="stylesheet" href="Css/CustomCss.css" />
+      
 
     </head>
     <body>
+        <%@include file="component/BootstrapLinks.jsp" %>
         <%@include file="component/Navbar.jsp" %>
 
+        <div class=" bg-wallpaper"> 
+            <div class="txt-middle text-center"> 
+                <h1 class="text-white">E-Notes save here notes!</h1>
+                <a href="Login.jsp" class="btn btn-primary">Login </a> &nbsp;
+                  <a href="Register.jsp" class="btn btn-primary">New User </a>
+            
 
-        <script src="jquery\dist\jquery.slim.min.js"></script>
-        <script src="popper.js\dist\umd\popper.min.js"></script>
-        <script src="bootstrap\dist\js\bootstrap.min.js"></script>
-        <!--<script src="js/scripts.js"></script>-->
+        </div> 
+        </div>
+        
+
     </body>
 </html>
