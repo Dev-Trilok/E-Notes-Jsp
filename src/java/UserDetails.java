@@ -10,25 +10,51 @@ import java.sql.Statement;
 
 public class UserDetails {
 
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-   static final String DB_URL = "jdbc:mysql://localhost/ENotes";
-    static final String USER = "root";
-    static final String PASS = "root";
-    Connection conn = null;
-    Statement stmt = null;
-    String sql;
+    private String Fname, Lname, Email, Password;
 
-    void ConnectionFun() {
+    public UserDetails() {
+        super();
+    }
 
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            System.out.println("// Connecting to database...");
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement();
-            System.out.println("Database Connected");
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+    public UserDetails(String Fname, String Lname, String Email, String Password) {
+        super();
+        this.Fname = Fname; 
+        this.Lname = Lname;
+        this.Email = Email;
+        this.Password = Password;
+
+    }
+
+    public String getLname() {
+        return Lname;
+    }
+
+    public void setFname(String Fname) {
+        this.Fname = Fname;
+    }
+
+    public String getFname() {
+        return Fname;
+    }
+
+    public void setLname(String Lname) {
+        this.Lname = Lname;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String Password) {
+        this.Password = Password;
     }
 
 }

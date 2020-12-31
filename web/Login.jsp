@@ -9,7 +9,7 @@
 <html>
     <head>
          <meta name="viewport" content="width=device-width, initial-scale=1.0  shrink-to-fit=no" />
-        <title>E-Notes Register Page</title>
+        <title>E-Notes Login Page</title>
         <link rel="stylesheet" href="bootstrap\dist\css\bootstrap.min.css" />
         <link rel="stylesheet" href="Css/CustomCss.css" />
     </head>
@@ -25,17 +25,53 @@
                     <div class="card-header text-center text-white bg-custom">
                         <h4>Login</h4>
                     </div>
+                        <%
+                             String regMsg = (String) session.getAttribute("login-sucess");
+                            
+                             if (regMsg != null) {
+                                 
+                        %>     
+                        
+                             <div class="alert alert-primary" role="alert"> 
+                                 
+                                 <%=regMsg%> 
+                       
+                        <%
+                        session.removeAttribute("login-sucess");
+                                }
+
+                          %> 
+                            
+                         <%
+                             
+                             String failedMsg = (String) session.getAttribute("login-failed");
+                            
+                             if (failedMsg != null) {
+                                 
+                        %>     
+                        
+                             <div class="alert alert-danger" role="alert"> 
+                                
+                                 <%=failedMsg %> 
+                                 
+                                 </div>                       
+                        <%
+                                session.removeAttribute("login-failed");
+
+                                }
+
+                            %> 
                     <div class="card-body">
-                        <form>
+                        <form action="LoginServlet.jsp" method="post"> 
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                <input type="email" name="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                <input type="password" name="Password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                             </div>
                             <br>
                              <button type="submit" class="btn btn-primary">Login</button> 

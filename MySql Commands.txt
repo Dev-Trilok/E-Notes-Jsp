@@ -1,0 +1,11 @@
+create database ENotes;
+
+use ENotes;
+
+create table UserDetails(Id int(5) primary key, Uname char(20), Lname char(20)' at line 1
+mysql> create table UserDetails(Id int(5) primary key, Fname char(20), Lname char(20), Email char(30));
+
+
+alter table UserDetails add Password char(20);
+
+ALTER TABLE UserDetails MODIFY COLUMN Id INT(5) NOT NULL AUTO_INCREMENT;
