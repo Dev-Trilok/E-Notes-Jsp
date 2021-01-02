@@ -95,7 +95,7 @@
                                 <br>
                                 <button type="submit" class="btn btn-primary btn-">Submit</button>
                                 &nbsp;
-                                <button type="submit" class="btn btn-primary btn-">Cancel</button>
+                                <button type="reset" class="btn btn-primary btn-">Cancel</button>
                             </form>
                         </div> 
                     </div>

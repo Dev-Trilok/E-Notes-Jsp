@@ -24,45 +24,20 @@
                 <div class="card">
                     <div class="card-header text-center text-white bg-custom">
                         <h4>Login</h4>
-                    </div>
-                        <%
-                             String regMsg = (String) session.getAttribute("login-sucess");
-                            
-                             if (regMsg != null) {
-                                 
-                        %>     
-                        
-                             <div class="alert alert-primary" role="alert"> 
-                                 
-                                 <%=regMsg%> 
-                       
-                        <%
-                        session.removeAttribute("login-sucess");
-                                }
-
-                          %> 
-                            
+                         </div>
                          <%
-                             
                              String failedMsg = (String) session.getAttribute("login-failed");
-                            
                              if (failedMsg != null) {
-                                 
                         %>     
-                        
                              <div class="alert alert-danger" role="alert"> 
-                                
                                  <%=failedMsg %> 
-                                 
                                  </div>                       
                         <%
                                 session.removeAttribute("login-failed");
-
                                 }
-
                             %> 
                     <div class="card-body">
-                        <form action="LoginServlet.jsp" method="post"> 
+                        <form action="LoginServlet" method="post"> 
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
@@ -76,7 +51,7 @@
                             <br>
                              <button type="submit" class="btn btn-primary">Login</button> 
                              &nbsp;
-                             <button type="submit" class="btn btn-primary btn-"> cancel</button>
+                             <button type="reset" class="btn btn-primary btn-"> cancel</button>
                              
                     </form>
                     </div>

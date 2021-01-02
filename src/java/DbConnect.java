@@ -4,11 +4,12 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 
 /**
- *
- * @author Triloknath Nalawade
+ * Document : Home 
+ * Created on : 31 Dec, 2020, 12:05:12 PM 
+ * Author : Triloknath Nalawade
  */
 public class DbConnect {
-
+  
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost/ENotes";
     static final String USER = "root";

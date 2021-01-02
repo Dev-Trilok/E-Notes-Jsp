@@ -46,7 +46,7 @@ public class UserDao {
     public boolean userLogin(UserDetails ud) {
         boolean f = false;
         try {
-            String query = "select * from UserDetails where name=? and password=?";
+            String query = " select * from UserDetails where Email=? and Password=?;";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, ud.getEmail());
             ps.setString(2, ud.getPassword());
