@@ -1,4 +1,4 @@
-<nav class="navbar navabr-custom navbar-expand-lg navbar-dark bg-custom " >
+<nav class="navbar navabr-custom navbar-expand-lg navbar-dark bg-custom sticky-top fixed-top " >
   <a class="navbar-brand mb-0 h1" href="index.jsp">E-Notes</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

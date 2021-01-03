@@ -56,6 +56,10 @@ public class UserDao {
             {
                 f=true;
             }
+            String query2 ="SELECT Id FROM UserDetails WHERE UserDetails.Email =?;";
+            ps = con.prepareStatement(query2);
+            ps.setString(1, ud.getEmail());
+            rs = ps.executeQuery();
             
 
         } catch (Exception e) {
@@ -63,4 +67,23 @@ public class UserDao {
         }
         return f;
     }
+    
+     public boolean saveNote(saveDetails ud) {
+        boolean f = false;
+        try {
+            String query = " insert into Notes (Title, Content) values (?,?) ;";
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, ud.getTitle());
+            ps.setString(2, ud.getContent());
+             int i = ps.executeUpdate();
+            if (i == 1) {
+                f = true;
+            } 
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return f;
+    }
+    
 }

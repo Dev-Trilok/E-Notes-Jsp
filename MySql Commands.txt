@@ -9,3 +9,14 @@ mysql> create table UserDetails(Id int(5) primary key, Fname char(20), Lname cha
 alter table UserDetails add Password char(20);
 
 ALTER TABLE UserDetails MODIFY COLUMN Id INT(5) NOT NULL AUTO_INCREMENT;
+
+create table Notes (Id int(5) primary key, Title char(50) , Content varchar(100));
+
+ALTER TABLE Notes MODIFY COLUMN Id INT(5) NOT NULL AUTO_INCREMENT;
+
+
+ alter table Notes Add UserId int(5);
+
+
+Alter table Notes
+    -> Add foreign key (UserId) REFERENCES UserDetails(ID);

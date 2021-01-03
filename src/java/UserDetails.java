@@ -22,8 +22,12 @@ public class UserDetails {
         this.Lname = Lname;
         this.Email = Email;
         this.Password = Password;
+        
+        
 
     }
+    
+    
 
     public String getLname() {
         return Lname;
@@ -56,5 +60,7 @@ public class UserDetails {
     public void setPassword(String Password) {
         this.Password = Password;
     }
+    
+    
 
 }

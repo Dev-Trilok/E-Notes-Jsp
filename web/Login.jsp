@@ -51,8 +51,9 @@
                             <br>
                              <button type="submit" class="btn btn-primary">Login</button> 
                              &nbsp;
-                             <button type="reset" class="btn btn-primary btn-"> cancel</button>
-                             
+                         
+                             <a href="index.jsp" class="btn btn-primary"> Cancel</a>
+
                     </form>
                     </div>
 
@@ -61,6 +62,7 @@
             </div>
         </div> 
     </div>
+                       <%@include file="component/Footer.jsp" %>
     <script src="jquery\dist\jquery.slim.min.js"></script>
     <script src="popper.js\dist\umd\popper.min.js"></script>
     <script src="bootstrap\dist\js\bootstrap.min.js"></script>

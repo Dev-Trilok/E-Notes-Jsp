@@ -18,8 +18,8 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("Login success");
-
+      
+       
         String Email = request.getParameter("Email");
         String Password = request.getParameter("Password");
         UserDetails ud = new UserDetails();
@@ -27,12 +27,14 @@ public class LoginServlet extends HttpServlet {
         ud.setPassword(Password);
 
         UserDao dao = new UserDao(DbConnect.getConnect());
+       
         boolean f = dao.userLogin(ud);
 
         HttpSession session;
 
         if (f) {
             session = request.getSession();
+          
             response.sendRedirect("Home.jsp");
         } else 
         {
