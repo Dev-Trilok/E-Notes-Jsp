@@ -28,13 +28,14 @@ public class LoginServlet extends HttpServlet {
 
         UserDao dao = new UserDao(DbConnect.getConnect());
        
-        boolean f = dao.userLogin(ud);
+        UserDetails user = dao.userLogin(ud);
 
         HttpSession session;
 
-        if (f) {
+        if (user !=null) 
+        {
             session = request.getSession();
-          
+            session.setAttribute("userData", user);  
             response.sendRedirect("Home.jsp");
         } else 
         {

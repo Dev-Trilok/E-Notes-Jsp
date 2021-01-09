@@ -1,3 +1,5 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <nav class="navbar navabr-custom navbar-expand-lg navbar-dark bg-custom sticky-top fixed-top " >
   <a class="navbar-brand mb-0 h1" href="index.jsp">E-Notes</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,10 +18,9 @@
         <a class="nav-link" href="#">Show Notes</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-        <button type="button" class="btn btn-primary">Login</button> &nbsp; &nbsp;
-<button type="button" class="btn btn-primary">Register  </button>
+      
+      <%--<%@page import=""%>--%>
 
-    </form>
+     
   </div>
 </nav>

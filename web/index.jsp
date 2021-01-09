@@ -4,6 +4,7 @@
     Author     : Triloknath Nalawade
 --%>
 
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,7 +24,26 @@
                 <a href="Login.jsp" class="btn btn-primary">Login </a> &nbsp;
                   <a href="Register.jsp" class="btn btn-primary">New User </a>
             
-
+                <% 
+                    UserDao sa;
+                    UserDetails user = null;
+//                = (UserDetails) session.getAttribute("UserData");
+                
+          if(user != null)
+          {
+      %>
+      <a href="Login.jsp" class="btn btn-primary"><%= user.getFname() +user.getLname()  %></a> &nbsp; &nbsp;
+        <a href="Register.jsp" class="btn btn-primary">Register</a> &nbsp; &nbsp;
+        <%
+          }
+          else{
+              %>
+      
+        <a href="Login.jsp" class="btn btn-primary">Login</a> &nbsp; &nbsp;
+        <a href="Register.jsp" class="btn btn-primary">Register</a> &nbsp; &nbsp;
+        <%
+          }
+          %>
         </div> 
         </div>
         <%@include file="component/Footer.jsp" %>

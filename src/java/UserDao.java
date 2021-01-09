@@ -43,47 +43,52 @@ public class UserDao {
         return f;
     }
 
-    public boolean userLogin(UserDetails ud) {
-        boolean f = false;
+    public UserDetails userLogin(UserDetails ud) {
+        UserDetails user = null;
+    
         try {
             String query = " select * from UserDetails where Email=? and Password=?;";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, ud.getEmail());
             ps.setString(2, ud.getPassword());
             ResultSet rs = ps.executeQuery();
-            
-            if(rs.next())
-            {
-                f=true;
+
+            if (rs.next()) {
+                user = new UserDetails();
+                user.setFname(rs.getString("Fname"));
+                user.setLname(rs.getString("Lname"));
+                user.setEmail(rs.getString("Email"));
+                user.setPassword(rs.getString("Password"));
+
             }
-            String query2 ="SELECT Id FROM UserDetails WHERE UserDetails.Email =?;";
+            String query2 = "SELECT Id FROM UserDetails WHERE UserDetails.Email =?;";
             ps = con.prepareStatement(query2);
             ps.setString(1, ud.getEmail());
             rs = ps.executeQuery();
-            
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return f;
+       
+        return user;
     }
-    
-     public boolean saveNote(saveDetails ud) {
+
+    public boolean saveNote(saveDetails ud) {
         boolean f = false;
         try {
             String query = " insert into Notes (Title, Content) values (?,?) ;";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, ud.getTitle());
             ps.setString(2, ud.getContent());
-             int i = ps.executeUpdate();
+            int i = ps.executeUpdate();
             if (i == 1) {
                 f = true;
-            } 
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
         return f;
     }
-    
+
 }
